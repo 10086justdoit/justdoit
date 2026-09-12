@@ -1,0 +1,8 @@
+#pragma once
+
+#include "stm32f1xx.h"
+
+#define BOARD_LED_GPIO_PORT GPIOC
+#define BOARD_LED_GPIO_PIN  GPIO_PIN_13
+#define BOARD_LED_ACTIVE_LEVEL GPIO_PIN_RESET
+#define BOARD_LED_INACTIVE_LEVEL GPIO_PIN_SET

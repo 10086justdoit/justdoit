@@ -1,0 +1,6 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/build",
+        "--query-driver=E:/vscode_keiltools/install/arm-gnu-toolchain-15.3.rel1/bin/arm-none-eabi-gcc.exe"
+    ]
+}
