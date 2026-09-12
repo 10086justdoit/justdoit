@@ -53,9 +53,6 @@ TEMPLATE_STM32F103C8T6-layered/
 
 保存 ARM 和 ST 提供的原始代码，通常不直接修改：
 
-- `arm/cmsis-core`：Cortex-M 内核和 CMSIS 定义。
-- `arm/cmsis-compiler`：不同编译器的适配代码。
-- `st/STM32F1xx_HAL_Driver`：GPIO、UART、SPI、I2C、定时器等 STM32 外设驱动。
 
 ## 依赖方向
 
@@ -103,10 +100,6 @@ CMakeLists.txt
 
 它不是通过 `add_subdirectory()` 调用的，而是由顶层的 `CMAKE_TOOLCHAIN_FILE` 指定，在 CMake 配置早期自动加载。它负责：
 
-- 查找 `arm-none-eabi-gcc` 工具链。
-- 设置 `-mcpu=cortex-m3` 和 `-mthumb`。
-- 设置编译、汇编和链接参数。
-- 指定 `objcopy`、`size` 等 ARM 工具。
 
 ### `src/config/CMakeLists.txt`
 
@@ -116,10 +109,6 @@ CMakeLists.txt
 
 通过 `target_compile_definitions()` 添加 `STM32F103xB` 芯片宏，通过 `target_include_directories()` 加入底层头文件目录，再通过 `target_sources()` 加入：
 
-- 启动文件。
-- 系统时钟文件。
-- 项目初始化文件。
-- 中断处理文件。
 
 ### `src/os/CMakeLists.txt`
 
@@ -189,10 +178,6 @@ cmake -B build
 
 工作区配置还可以保存工程级 VS Code 设置，例如：
 
-- ARM GCC 编译器路径提示。
-- VS Code 任务按钮配置。
-- CMake 和代码补全相关设置。
-- 多目录工程的文件夹列表。
 
 它与其他工程文件的关系如下：
 
