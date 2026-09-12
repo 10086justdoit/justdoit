@@ -1,0 +1,8 @@
+CompileFlags:
+  CompilationDatabase: build
+  Add:
+    - --target=arm-none-eabi
+
+Diagnostics:
+  Suppress:
+    - unused-includes

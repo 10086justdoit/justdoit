@@ -1,0 +1,15 @@
+target_compile_definitions(${PROJECT_NAME} PRIVATE
+    USE_HAL_DRIVER
+    USE_PWR_LDO_SUPPLY
+)
+
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/Inc
+    ${CMAKE_CURRENT_LIST_DIR}/Inc/Legacy
+)
+
+file(GLOB HAL_SOURCES CONFIGURE_DEPENDS
+    ${CMAKE_CURRENT_LIST_DIR}/Src/*.c
+)
+list(FILTER HAL_SOURCES EXCLUDE REGEX ".*_template\\.c$")
+target_sources(${PROJECT_NAME} PRIVATE ${HAL_SOURCES})

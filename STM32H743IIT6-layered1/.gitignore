@@ -1,0 +1,18 @@
+# CMake/Ninja build output
+build/
+.cache/
+
+# Compiler and linker output
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.obj
+*.d
+
+# Compilation database
+compile_commands.json
+
+# VS Code temporary files
+.vscode/*.log

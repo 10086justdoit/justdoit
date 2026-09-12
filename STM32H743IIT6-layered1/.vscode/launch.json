@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "cmsis-dap",
+            "servertype": "openocd",
+            "executable": "./build/DEMO.elf",
+            "runToEntryPoint": "main",
+            "configFiles": [
+                "cmsis-dap.cfg",
+                "stm32h7x.cfg"
+            ],
+            "toolchainPrefix": "arm-none-eabi"
+        }
+    ]
+}
